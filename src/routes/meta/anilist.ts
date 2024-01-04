@@ -133,15 +133,9 @@ const routes = async (fastify: FastifyInstance, options: RegisterOptions) => {
       const notYetAired = (request.query as { notYetAired: boolean }).notYetAired;
 
       const anilist = generateAnilistMeta();
-       const anilist = generateAnilistMeta();
       const _weekStart = Math.ceil(Date.now() / 1000);
 
       const res = await anilist.fetchAiringSchedule(
-        page,
-        perPage,
-        weekStart,
-        weekEnd,
-        notYetAired,
         page ?? 1,
         perPage ?? 20,
         weekStart ?? _weekStart,
